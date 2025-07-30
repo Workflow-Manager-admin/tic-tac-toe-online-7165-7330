@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders tic tac toe title and board', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText(/Tic Tac Toe/i)).toBeInTheDocument();
+  expect(screen.getAllByRole('button').length).toBeGreaterThanOrEqual(11); // 9 cells + controls + theme
 });
